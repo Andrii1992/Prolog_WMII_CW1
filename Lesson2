@@ -1,0 +1,92 @@
+4=:=2+2     - poruwnanie artfmetyczne
+=:=              - rowne 
+=/=              - rozne
+
+X= 2+6.
+X is 2+6. co mam podstawic zeby byl X
+
+
+T - term
+T1
+T2
+T1== T2                        - ruwnosc scisla
+T1 =@=T2                    - rowne strukturalnie
+T1=T2 - unifikacja ()     -nie da sie unifikowac
+
+T1           T2           T1== T2         T1 =@=T2            T1=T2
+a              a                  T                        T                         T
+a              b                  F                        F                         F
+a              X                 F                        F                        T: X/a -ukonkreynic zm X 
+                                                                                         tala a      
+                                                                                        Prolog w odpowiedzi                                                                                         napisze X = a
+Zmienna z lewej a to co podstawiamy z prawej!!!
+
+
+f(x)          Y                 F                          F                                              T:Y=f(x)       
+f(x)          X                Nie!                      T:Y = _A1                                 T:X=Y       
+X             Y                 F                             Y=_A2                                   X_A3
+                                                                                                                 Y= _A3      
+
+
+T1: f(X,a)                     MGU(T1,T2) - najbardziej ogolny unifikator
+T2: f(b,y)                      - podstawienie q za zm. wystepujace w T1 i T@,
+                                     takie, ze T1q = T2q
+
+
+
+f(a,X,Y)
+f(X,X,y)
+f()
+f()
+f() 
+T2   
+
+T1: f(X,a)   
+         -- -niezgodnosc
+
+T2: f(b,y)  
+          -- -niezgodnosc  
+
+T1q1 = f(b,a) 
+T2q1 = f(b,Y)
+
+q2: Y = a
+----------------------------
+T1q1q2 = f(b,a)
+T2q1q2 = f(b,a)
+suksces
+
+
+
+MGU (T1,T2) = q1q2 {X= b,Y=a}
+
+
+
+----------------------------------------------------------------------------------------
+
+T1= fu(a,X,f(g(Y)))
+T2= fu(Y,F(Z),f(Z))
+
+
+
+q1:Y=a
+Tq1 = f(a,X,f(g()Y))
+T2q1=f(a,f(Z),f(Z))
+
+
+
+q2 X:f(Z)
+T1q1q2 = f(a,f(Z),f()g(a))
+T2q1q2 = f(a,f(Z),f(Z))
+q3 Z=g(a)
+
+T1q1q2q3 = f(a,f(g(a)),f()g(a))
+T2q1q2q3 = f(a,f(g(a)),f(g(a)))
+MGU(T1,T2) = q1q2q3 = {Y=a,X=f(g(a)),Z=q(a)}
+
+
+
+q1 - pirwsza niewiadoma 
+q2 - 2 niewiadoma
+
+q -to sigma
