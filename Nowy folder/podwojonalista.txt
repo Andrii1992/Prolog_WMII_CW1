@@ -1,0 +1,4 @@
+pod([],[]).
+
+pod([H1|T1],[H1,H1|T2]):-    %podwojone_|
+                        pod(T1,T2).
