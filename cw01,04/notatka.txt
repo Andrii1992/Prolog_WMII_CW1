@@ -1,0 +1,32 @@
+trace.
+lista_dodatnia().
+
+
+
+     L1      A         L1
+
+1) [a,1]   []
+
+2) [1]     [a]
+
+3)  []       [1,a]      [1,a]
+
+
+
+
+revers dwuargumentowa lista
+
+
+konkatynacja
+
+     L1      L2         L3
+
+1) [a,1]   [b]       [a|T31]
+
+2) [1]      [b]       [T31=1|T32  ]  
+
+3)  []       [b]       T32=[b]
+                           -------------------koniec rekurecji
+
+                         T31=[1,b]   - glowa
+                         l3=[a,1,b]    - lista ostateczna
