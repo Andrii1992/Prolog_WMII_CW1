@@ -1,0 +1,10 @@
+--Definicje lokalne
+
+ob_kuli1 r = 4/3*pi*r*r*r
+
+--Klauzula where
+
+ob_kuli2 r = a * pi * sz
+	where
+		a = 4/3
+		sz = r * r * r
